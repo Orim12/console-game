@@ -28,7 +28,7 @@
   if(document.getElementById(id)) return;
 
   const css = document.createElement('style'); css.id='codingclicker-style';
-  css.textContent = `#${id}{position:fixed;right:18px;bottom:18px;width:360px;max-width:92vw;background:#071226;color:#e6f1ff;padding:14px;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.6);z-index:2147483647;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}#${id} h3{margin:0 0 8px 0;font-size:16px}#${id} .row{display:flex;align-items:center;gap:8px}#${id} button{background:#2563eb;border:0;padding:8px 10px;color:white;border-radius:8px;cursor:pointer}#${id} button.secondary{background:#334155}#${id} .bigclick{width:100%;padding:18px;border-radius:10px;background:linear-gradient(180deg,#1f6ff3,#1854c1);font-size:18px;text-align:center}#${id} .muted{color:#9fb}
+  css.textContent = `#${id}{box-sizing:border-box;position:fixed;right:18px;bottom:18px;width:360px;max-width:92vw;background:#071226;color:#e6f1ff;padding:14px;border-radius:10px;box-shadow:0 10px 40px rgba(0,0,0,.6);z-index:2147483647;font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif}#${id} *,#${id} *:before,#${id} *:after{box-sizing:inherit}#${id} h3{margin:0 0 8px 0;font-size:16px}#${id} .row{display:flex;align-items:center;gap:8px;flex-wrap:wrap}#${id} button{background:#2563eb;border:0;padding:8px 10px;color:white;border-radius:8px;cursor:pointer}#${id} button.secondary{background:#334155}#${id} .bigclick{display:block;width:100%;padding:12px 14px;border-radius:10px;background:linear-gradient(180deg,#1f6ff3,#1854c1);font-size:18px;text-align:center;white-space:normal;word-break:break-word;overflow-wrap:break-word}#${id} .muted{color:#9fb}
   `;
   document.head.appendChild(css);
 
