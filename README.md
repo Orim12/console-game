@@ -6,11 +6,13 @@ Quick usage
 - Host this repo on GitHub and push `game.js` to `main`.
 - Recommended CDN (jsDelivr) URL:
   - `https://cdn.jsdelivr.net/gh/Orim12/console-game@main/game.js`
+- GitHub Pages (recommended for stable project hosting):
+  - `https://Orim12.github.io/console-game/game.js` (enable Pages to serve the `docs/` folder)
 - Console loader (paste into the browser console):
 
 ```javascript
 var s=document.createElement('script');
-s.src='https://cdn.jsdelivr.net/gh/Orim12/console-game@main/game.js';
+s.src='https://Orim12.github.io/console-game/game.js';
 document.body.appendChild(s);
 ```
 
