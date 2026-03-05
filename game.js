@@ -15,9 +15,13 @@
     }
   };
 
-  let state = Object.assign({}, defaults, JSON.parse(localStorage.getItem(STORE_KEY) || '{}'));
+  // Safe localStorage access (some pages block access and throw SecurityError)
+  function safeGetItem(key){ try{ return localStorage.getItem(key); }catch(e){ return null; } }
+  function safeSetItem(key, val){ try{ localStorage.setItem(key, val); return true; }catch(e){ return false; } }
 
-  function save(){ localStorage.setItem(STORE_KEY, JSON.stringify(state)); }
+  let state = Object.assign({}, defaults, JSON.parse(safeGetItem(STORE_KEY) || '{}'));
+
+  function save(){ safeSetItem(STORE_KEY, JSON.stringify(state)); }
 
   // UI
   const id = 'codingclicker-overlay';
@@ -86,7 +90,7 @@
 
   // Expose API
   window.CodingGame = window.CodingGame || {};
-  window.CodingGame.getState = ()=>JSON.parse(localStorage.getItem(STORE_KEY)||'{}');
+  window.CodingGame.getState = ()=>JSON.parse(safeGetItem(STORE_KEY)||'{}');
   window.CodingGame.addCoins = (n)=>{ state.coins = (state.coins||0)+Number(n||0); save(); render(); };
 
   render();

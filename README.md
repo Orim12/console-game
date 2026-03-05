@@ -5,19 +5,19 @@ This repository contains `game.js` — a single-file, dependency-free clicker-st
 Quick usage
 - Host this repo on GitHub and push `game.js` to `main`.
 - Recommended CDN (jsDelivr) URL:
-  - `https://cdn.jsdelivr.net/gh/USER/REPO@main/game.js`
+  - `https://cdn.jsdelivr.net/gh/Orim12/console-game@main/game.js`
 - Console loader (paste into the browser console):
 
 ```javascript
 var s=document.createElement('script');
-s.src='https://cdn.jsdelivr.net/gh/USER/REPO@main/game.js';
+s.src='https://cdn.jsdelivr.net/gh/Orim12/console-game@main/game.js';
 document.body.appendChild(s);
 ```
 
 - Bookmarklet (replace `USER/REPO`):
 
 ```
-javascript:(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/USER/REPO@main/game.js';document.body.appendChild(s);})();
+javascript:(function(){var s=document.createElement('script');s.src='https://cdn.jsdelivr.net/gh/Orim12/console-game@main/game.js';document.body.appendChild(s);})();
 ```
 
 About the game
