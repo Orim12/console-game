@@ -9,13 +9,45 @@
 <body>
   <h1>Console Game — Coding Clicker</h1>
   <p>This page hosts the single-file game. To run it on any site, use the bookmarklet or console loader in the <a href="./README.md">README</a>.</p>
+  <p>Add bookmarklet:</p>
+  <button id="bookmarklet">Get bookmarklet</button>
   <p>Direct script URL (served from GitHub Pages):</p>
   <pre>https://Orim12.github.io/console-game/game.js</pre>
   <p>Run it here:</p>
   <button id="run">Load game</button>
+  <div id="bookmarkletArea" style="margin-top:12px"></div>
   <script>
     document.getElementById('run').addEventListener('click', function(){
       var s=document.createElement('script');s.src='game.js';document.body.appendChild(s);
+    });
+    document.getElementById('bookmarklet').addEventListener('click', function(){
+      var url='https://Orim12.github.io/console-game/game.js';
+      var code="javascript:(function(){var s=document.createElement('script');s.src='"+url+"';document.body.appendChild(s);})();";
+
+      var area = document.getElementById('bookmarkletArea');
+      area.innerHTML = '';
+
+      var text = document.createElement('p');
+      text.textContent = 'Drag this link to your bookmarks bar, or copy it:';
+      area.appendChild(text);
+
+      var link = document.createElement('a');
+      link.href = code;
+      link.textContent = 'Console Game';
+      link.style.marginRight = '12px';
+      area.appendChild(link);
+
+      var copy = document.createElement('button');
+      copy.type = 'button';
+      copy.textContent = 'Copy code';
+      copy.addEventListener('click', function(){
+        navigator.clipboard.writeText(code).then(function(){
+          copy.textContent = 'Copied';
+        }).catch(function(){
+          copy.textContent = 'Copy failed';
+        });
+      });
+      area.appendChild(copy);
     });
   </script>
 </body>
