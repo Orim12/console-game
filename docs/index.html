@@ -1,0 +1,22 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Console Game — Coding Clicker</title>
+  <style>body{font-family:system-ui,Segoe UI,Roboto,Arial,sans-serif;margin:24px;background:#0b1220;color:#e6eef8}a{color:#7cc0ff}</style>
+</head>
+<body>
+  <h1>Console Game — Coding Clicker</h1>
+  <p>This page hosts the single-file game. To run it on any site, use the bookmarklet or console loader in the <a href="../README.md">README</a>.</p>
+  <p>Direct script URL (served from GitHub Pages):</p>
+  <pre>https://Orim12.github.io/console-game/game.js</pre>
+  <p>Run it here:</p>
+  <button id="run">Load game</button>
+  <script>
+    document.getElementById('run').addEventListener('click', function(){
+      var s=document.createElement('script');s.src='game.js';document.body.appendChild(s);
+    });
+  </script>
+</body>
+</html>
